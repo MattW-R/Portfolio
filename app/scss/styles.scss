@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  position: fixed;
+
+  &#right-nav {
+    left: 85%;
+  }
+}
+
+main {
+  position: relative;
+  width: 70%;
+  left: 15%;
+}
