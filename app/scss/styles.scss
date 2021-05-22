@@ -50,10 +50,10 @@ section {
 }
 
 article {
-  margin: 200px 0 800px;
+  padding: 200px 0 600px;
 
   &:nth-last-child(1) {
-    margin-bottom: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -95,7 +95,7 @@ h1, p, a {
 
   &:hover, &:focus {
     outline: none;
-    
+
     &::before {
       width: calc(100% + 30px);
       height: 100%;
