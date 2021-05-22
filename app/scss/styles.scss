@@ -15,3 +15,11 @@ main {
   width: 70%;
   left: 15%;
 }
+
+section, article {
+  margin: 300px 0 800px;
+
+  &#contact {
+    margin-bottom: 350px;
+  }
+}
