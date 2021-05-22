@@ -77,23 +77,33 @@ h1, p, a {
     position: absolute;
     top: -2px;
     left: -15px;
-    width: calc(100% + 30px);
-    height: 100%;
     border-top: 2px solid $foreground-colour;
     border-bottom: 2px solid $foreground-colour;
     z-index: -1;
   }
 
-  &:after {
+  &::after {
     display: inline-block;
     content: '';
     position: absolute;
     left: -2px;
     top: -15px;
-    height: calc(100% + 30px);
-    width: 100%;
     border-left: 2px solid $foreground-colour;
     border-right: 2px solid $foreground-colour;
     z-index: -1;
+  }
+
+  &:hover, &:focus {
+    outline: none;
+    
+    &::before {
+      width: calc(100% + 30px);
+      height: 100%;
+    }
+
+    &::after {
+      height: calc(100% + 30px);
+      width: 100%;
+    }
   }
 }
