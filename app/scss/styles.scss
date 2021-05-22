@@ -81,7 +81,7 @@ h1, p, a {
     height: 100%;
     border-top: 2px solid $foreground-colour;
     border-bottom: 2px solid $foreground-colour;
-    cursor: text;
+    z-index: -1;
   }
 
   &:after {
@@ -94,6 +94,6 @@ h1, p, a {
     width: 100%;
     border-left: 2px solid $foreground-colour;
     border-right: 2px solid $foreground-colour;
-    cursor: text;
+    z-index: -1;
   }
 }
