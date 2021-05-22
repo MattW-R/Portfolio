@@ -80,6 +80,9 @@ h1, p, a {
     border-top: 2px solid $foreground-colour;
     border-bottom: 2px solid $foreground-colour;
     z-index: -1;
+    width: 0;
+    height: 100%;
+    transition: width 200ms linear 100ms;
   }
 
   &::after {
@@ -91,6 +94,9 @@ h1, p, a {
     border-left: 2px solid $foreground-colour;
     border-right: 2px solid $foreground-colour;
     z-index: -1;
+    width: 100%;
+    height: 0;
+    transition: height 200ms linear 100ms;
   }
 
   &:hover, &:focus {
@@ -98,12 +104,11 @@ h1, p, a {
 
     &::before {
       width: calc(100% + 30px);
-      height: 100%;
     }
 
     &::after {
       height: calc(100% + 30px);
-      width: 100%;
+
     }
   }
 }
