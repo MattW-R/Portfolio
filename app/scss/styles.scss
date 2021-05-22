@@ -36,6 +36,9 @@ main {
 
 section {
   padding: 300px 0 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &#contact {
     padding-bottom: 250px;
