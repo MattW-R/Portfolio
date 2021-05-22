@@ -1,3 +1,5 @@
+$foreground-colour: #000;
+
 * {
   box-sizing: border-box;
 }
@@ -58,5 +60,37 @@ article {
     flex-direction: column;
     align-content: center;
     padding: 0 15%;
+  }
+}
+
+h1, p, a {
+  position: relative;
+  display: inline-block;
+  padding: 3px;
+
+  &::before {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -15px;
+    width: calc(100% + 30px);
+    height: 100%;
+    border-top: 2px solid $foreground-colour;
+    border-bottom: 2px solid $foreground-colour;
+    cursor: text;
+  }
+
+  &:after {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -15px;
+    height: calc(100% + 30px);
+    width: 100%;
+    border-left: 2px solid $foreground-colour;
+    border-right: 2px solid $foreground-colour;
+    cursor: text;
   }
 }
