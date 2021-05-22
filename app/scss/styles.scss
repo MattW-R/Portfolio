@@ -16,10 +16,22 @@ main {
   left: 15%;
 }
 
-section, article {
-  padding: 300px 0 800px;
+section {
+  padding: 0 0 800px;
+
+  &#about {
+    padding-top: 300px;
+  }
 
   &#contact {
     padding-bottom: 350px;
+  }
+}
+
+article {
+  margin: 200px 0 800px;
+
+  &:nth-last-child(1) {
+    margin-bottom: 0;
   }
 }
