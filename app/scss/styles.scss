@@ -6,6 +6,7 @@ $foreground-colour: #000;
 
 body {
   margin: 0 auto;
+  font-family: 'Poiret One', cursive;
 }
 
 nav {
@@ -64,6 +65,10 @@ article {
     align-content: center;
     padding: 0 15%;
   }
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
 }
 
 h1, p, a {
