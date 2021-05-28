@@ -35,6 +35,18 @@ nav {
   }
 }
 
+a {
+  text-decoration: none;
+
+  &:link, &:visited {
+    color: $out-of-focus-colour;
+
+    &:focus, &:hover {
+      color: $foreground-colour;
+    }
+  }
+}
+
 main {
   position: relative;
   width: 70%;
