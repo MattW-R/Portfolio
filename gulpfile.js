@@ -28,7 +28,7 @@ const tsCompile = () => {
         .js.pipe(gulp.dest('app/js'))
 }
 
-const compress = () => {
+const jsCompress = () => {
     return gulp.src('app/js/*.js')
         .pipe(minify({
             ext:{
@@ -40,20 +40,15 @@ const compress = () => {
         .pipe(gulp.dest('app/js/dist'))
 }
 
-const jsPreprocess = () => {
-    sassCompile()
-    autoPrefix()
-}
-
 const watch = () => {
-    gulp.watch('app/scss/**/*.scss', jsPreprocess)
-    gulp.watch('app/ts/*.ts', (cb) => {
-        tsCompile()
-        compress()
-    })
+    gulp.watch('app/scss/**/*.scss', sassCompile)
+    gulp.watch('app/css/*.css', autoPrefix)
+    gulp.watch('app/ts/*.ts', tsCompile)
+    gulp.watch('app/js/*.js', jsCompress)
 }
 
 exports.sass = sassCompile
 exports.autoPrefix = autoPrefix
-exports.js = jsPreprocess
+exports.ts = tsCompile
+exports.jsCompress = jsCompress
 exports.watch = watch
