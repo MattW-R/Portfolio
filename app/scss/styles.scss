@@ -1,5 +1,5 @@
-$foreground-colour: #000;
-$out-of-focus-colour: #777;
+$foreground-colour: #777;
+$hidden-colour: #FFFF;
 
 * {
   box-sizing: border-box;
@@ -12,7 +12,7 @@ html {
 body {
   margin: 0 auto;
   font-family: 'Poiret One', cursive;
-  color: $out-of-focus-colour;
+  color: $foreground-colour;
 }
 
 nav {
@@ -39,11 +39,7 @@ a {
   text-decoration: none;
 
   &:link, &:visited {
-    color: $out-of-focus-colour;
-
-    &:focus, &:hover {
-      color: $foreground-colour;
-    }
+    color: inherit;
   }
 }
 
@@ -52,6 +48,10 @@ main {
   width: 70%;
   left: 15%;
   padding: 0 10%;
+
+  a, a:link, a:visited {
+    color: $hidden-colour;
+  }
 }
 
 section {
@@ -143,5 +143,14 @@ h1, p, a {
     &::after {
       height: calc(100% + 30px);
     }
+  }
+}
+
+.hidden {
+  color: $hidden-colour;
+  transition: color 2000ms ease-out;
+
+  &.visible {
+    color: $foreground-colour;
   }
 }
