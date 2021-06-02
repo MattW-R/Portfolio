@@ -19,7 +19,7 @@ const autoPrefix = () => {
         .pipe(autoprefixer({
             cascade: false
         }))
-        .pipe(gulp.dest('app/css/dist'))
+        .pipe(gulp.dest('app/css'))
 }
 
 const tsCompile = () => {
@@ -34,21 +34,18 @@ const jsCompress = () => {
             ext:{
                 min:'.js'
             },
-            ignoreFiles: ['*-min.js'],
             noSource: true
         }))
-        .pipe(gulp.dest('app/js/dist'))
+        .pipe(gulp.dest('app/js'))
 }
 
 const watch = () => {
-    gulp.watch('app/scss/**/*.scss', sassCompile)
-    gulp.watch('app/css/*.css', autoPrefix)
-    gulp.watch('app/ts/*.ts', tsCompile)
-    gulp.watch('app/js/*.js', jsCompress)
+    gulp.watch('app/scss/**/*.scss', gulp.series(sassCompile, autoPrefix))
+    gulp.watch('app/ts/*.ts', gulp.series(tsCompile, jsCompress))
 }
 
-exports.sass = sassCompile
+exports.sassCompile = sassCompile
 exports.autoPrefix = autoPrefix
-exports.ts = tsCompile
+exports.tsCompile = tsCompile
 exports.jsCompress = jsCompress
 exports.watch = watch
