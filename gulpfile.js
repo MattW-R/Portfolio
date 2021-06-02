@@ -4,6 +4,7 @@ const autoprefixer = require('gulp-autoprefixer')
 const cssnano = require('gulp-cssnano')
 const sourcemaps = require('gulp-sourcemaps')
 const ts = require('gulp-typescript')
+const stripDebug = require('gulp-strip-debug')
 const minify = require('gulp-minify')
 const tsProject = ts.createProject('tsconfig.json')
 const size = require('gulp-size')
@@ -58,6 +59,7 @@ const tsBuild = (cb) => {
     tsProject.src()
         .pipe(size({title: 'ts: '}))
         .pipe(tsProject())
+        .pipe(stripDebug())
         .pipe(size({title: 'js: '}))
         .pipe(minify({
             ext:{
