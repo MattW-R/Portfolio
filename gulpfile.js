@@ -1,6 +1,7 @@
 const gulp = require('gulp')
 const sass = require('gulp-sass')
 const autoprefixer = require('gulp-autoprefixer')
+const cssnano = require('gulp-cssnano')
 const sourcemaps = require('gulp-sourcemaps')
 const ts = require('gulp-typescript')
 const minify = require('gulp-minify')
@@ -14,11 +15,17 @@ const sassCompile = () => {
         .pipe(gulp.dest('app/css'))
 }
 
-const autoPrefix = () => {
+const cssAutoPrefix = () => {
     return gulp.src('app/css/*.css')
         .pipe(autoprefixer({
             cascade: false
         }))
+        .pipe(gulp.dest('app/css'))
+}
+
+const cssCompress = () => {
+    return gulp.src('app/css/*.css')
+        .pipe(cssnano())
         .pipe(gulp.dest('app/css'))
 }
 
@@ -40,12 +47,13 @@ const jsCompress = () => {
 }
 
 const watch = () => {
-    gulp.watch('app/scss/**/*.scss', gulp.series(sassCompile, autoPrefix))
+    gulp.watch('app/scss/**/*.scss', gulp.series(sassCompile, cssAutoPrefix, cssCompress))
     gulp.watch('app/ts/*.ts', gulp.series(tsCompile, jsCompress))
 }
 
 exports.sassCompile = sassCompile
-exports.autoPrefix = autoPrefix
+exports.cssAutoPrefix = cssAutoPrefix
+exports.cssCompress = cssCompress
 exports.tsCompile = tsCompile
 exports.jsCompress = jsCompress
 exports.watch = watch
