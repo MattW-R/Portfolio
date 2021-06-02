@@ -6,15 +6,19 @@ const sourcemaps = require('gulp-sourcemaps')
 const ts = require('gulp-typescript')
 const minify = require('gulp-minify')
 const tsProject = ts.createProject('tsconfig.json')
+const size = require('gulp-size')
 
 const sassCompile = () => {
     return gulp.src('app/scss/*.scss')
         .pipe(sourcemaps.init())
+        .pipe(size({title: 'scss: '}))
         .pipe(sass())
         .pipe(autoprefixer({
             cascade: false
         }))
+        .pipe(size({title: 'css: '}))
         .pipe(cssnano())
+        .pipe(size({title: 'nano-css: '}))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('app/css'))
 }
@@ -22,13 +26,16 @@ const sassCompile = () => {
 const tsCompile = () => {
     return tsProject.src()
         .pipe(sourcemaps.init())
+        .pipe(size({title: 'ts: '}))
         .pipe(tsProject())
+        .pipe(size({title: 'js: '}))
         .pipe(minify({
             ext:{
                 min:'.js'
             },
             noSource: true
         }))
+        .pipe(size({title: 'min-js: '}))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('app/js'))
 }
