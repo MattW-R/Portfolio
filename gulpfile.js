@@ -8,6 +8,7 @@ const ts = require('gulp-typescript')
 const stripDebug = require('gulp-strip-debug')
 const minify = require('gulp-minify')
 const tsProject = ts.createProject('tsconfig.json')
+const imagemin = require('gulp-imagemin')
 const size = require('gulp-size')
 
 const htmlBuild = (cb) => {
@@ -84,10 +85,18 @@ const tsBuild = (cb) => {
     cb()
 }
 
+const imgBuild = (cb) => {
+    gulp.src('app/images/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/images'))
+    return cb()
+}
+
 exports.watch = () => {
     gulp.watch('app/**/*.html', htmlBuild)
     gulp.watch('app/scss/*.scss', sassBuildDev)
     gulp.watch('app/ts/**/*.ts', tsBuildDev)
+    gulp.watch('app/images/*', imgBuild)
 }
-exports.buildDev = gulp.series(htmlBuild, sassBuildDev, tsBuildDev)
-exports.build = gulp.series(htmlBuild, sassBuild, tsBuild)
+exports.buildDev = gulp.series(htmlBuild, sassBuildDev, tsBuildDev, imgBuild)
+exports.build = gulp.series(htmlBuild, sassBuild, tsBuild, imgBuild)
