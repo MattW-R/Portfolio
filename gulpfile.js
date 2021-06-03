@@ -7,7 +7,7 @@ const cssnano = require('gulp-cssnano')
 const sourcemaps = require('gulp-sourcemaps')
 const ts = require('gulp-typescript')
 const stripDebug = require('gulp-strip-debug')
-const minify = require('gulp-minify')
+const minify = require('gulp-uglify')
 const tsProject = ts.createProject('tsconfig.json')
 const imagemin = require('gulp-imagemin')
 const size = require('gulp-size')
@@ -48,12 +48,7 @@ const tsBuildDev = (cb) => {
         .pipe(size({title: 'ts:'}))
         .pipe(tsProject())
         .pipe(size({title: 'js:'}))
-        .pipe(minify({
-            ext:{
-                min:'.js'
-            },
-            noSource: true
-        }))
+        .pipe(minify())
         .pipe(size({title: 'min-js:'}))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/js'))
@@ -80,12 +75,7 @@ const tsBuild = (cb) => {
         .pipe(tsProject())
         .pipe(stripDebug())
         .pipe(size({title: 'js:'}))
-        .pipe(minify({
-            ext:{
-                min:'.js'
-            },
-            noSource: true
-        }))
+        .pipe(minify())
         .pipe(size({title: 'min-js:'}))
         .pipe(gulp.dest('dist/js'))
     cb()
