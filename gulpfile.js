@@ -1,4 +1,5 @@
 const gulp = require('gulp')
+const del = require('del')
 const htmlmin = require('gulp-htmlmin')
 const sass = require('gulp-sass')
 const autoprefixer = require('gulp-autoprefixer')
@@ -10,6 +11,11 @@ const minify = require('gulp-minify')
 const tsProject = ts.createProject('tsconfig.json')
 const imagemin = require('gulp-imagemin')
 const size = require('gulp-size')
+
+const clearBuildDir = (cb) => {
+    del('dist/*', {force:true})
+    return cb()
+}
 
 const htmlBuild = (cb) => {
     gulp.src('app/**/*.html')
@@ -94,9 +100,9 @@ const imgBuild = (cb) => {
 
 exports.watch = () => {
     gulp.watch('app/**/*.html', htmlBuild)
-    gulp.watch('app/scss/*.scss', sassBuildDev)
+    gulp.watch('app/scss/**/*.scss', sassBuildDev)
     gulp.watch('app/ts/**/*.ts', tsBuildDev)
     gulp.watch('app/images/*', imgBuild)
 }
-exports.buildDev = gulp.series(htmlBuild, sassBuildDev, tsBuildDev, imgBuild)
-exports.build = gulp.series(htmlBuild, sassBuild, tsBuild, imgBuild)
+exports.buildDev = gulp.series(clearBuildDir, htmlBuild, sassBuildDev, tsBuildDev, imgBuild)
+exports.build = gulp.series(clearBuildDir, htmlBuild, sassBuild, tsBuild, imgBuild)
