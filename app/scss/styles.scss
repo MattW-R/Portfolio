@@ -16,7 +16,7 @@ html {
 
 body {
   margin: 0 auto;
-  font-family: 'Poiret One', cursive;
+  font-family: $header-font;
   color: $foreground-colour;
 }
 
@@ -67,5 +67,5 @@ a {
 }
 
 p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $body-font;
 }
