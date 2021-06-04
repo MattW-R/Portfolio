@@ -3,13 +3,12 @@ nav {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   width: 15%;
 
   &#right-nav {
     left: 85%;
-    justify-content: center;
   }
 
   a {
