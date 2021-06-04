@@ -23,9 +23,8 @@
     }
 
     input, textarea {
-      color: $foreground-colour;
       border: none;
-      border-bottom: 1px solid $foreground-colour;
+      border-bottom: 1px solid;
       background-color: $hidden-colour;
       width: 80%;
 
@@ -35,7 +34,8 @@
 
       &:focus, &:hover {
         outline: none;
-        border-bottom: 1px solid $selected-colour;
+        border-color: $selected-colour;
+        color: $foreground-colour;
       }
     }
 

@@ -1,8 +1,10 @@
 .hidden {
   color: $hidden-colour;
-  transition: color 1000ms ease-out;
+  border-color: $hidden-colour;
+  transition: color 1000ms ease-out, border-color 1000ms ease-out;
 
   &.visible {
     color: $foreground-colour;
+    border-color: $foreground-colour;
   }
 }
