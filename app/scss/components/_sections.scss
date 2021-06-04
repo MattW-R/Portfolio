@@ -1,0 +1,23 @@
+section, article {
+  padding: 300px 0 500px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    text-align: center;
+  }
+}
+
+article {
+  &:nth-last-child(1) {
+    padding-bottom: 0;
+  }
+
+  a {
+    margin-right: 30px;
+  }
+}

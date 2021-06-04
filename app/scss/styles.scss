@@ -1,6 +1,7 @@
 @import 'components/normalize';
 @import 'components/variables';
 @import 'components/nav';
+@import 'components/sections';
 @import 'components/contact';
 @import 'components/border-lines-effect';
 @import 'components/hidden-effect';
@@ -28,29 +29,6 @@ main {
 
   a, a:link, a:visited {
     color: $hidden-colour;
-  }
-}
-
-section {
-  padding: 300px 0 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  h1 {
-    text-align: center;
-  }
-}
-
-article {
-  padding: 300px 0 500px;
-
-  &:nth-last-child(1) {
-    padding-bottom: 0;
-  }
-
-  a {
-    margin-right: 30px;
   }
 }
 
