@@ -6,6 +6,39 @@
     padding: 0 15%;
     width: 100%;
 
+    div {
+      margin: 5px 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    label, input, textarea {
+      font-size: 1rem;
+      padding: 1px;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    label {
+      text-align: right;
+    }
+
+    input, textarea {
+      color: $foreground-colour;
+      border: none;
+      border-bottom: 1px solid $foreground-colour;
+      background-color: $hidden-colour;
+      width: 80%;
+
+      &[type='submit'] {
+        width: auto;
+      }
+
+      &:focus, &:hover {
+        outline: none;
+        border-bottom: 1px solid $selected-colour;
+      }
+    }
+
     textarea {
       resize: none;
     }
