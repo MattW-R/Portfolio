@@ -12,51 +12,51 @@
     </head>
     <body>
         <nav id="left-nav">
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="#about" tabindex="1">About</a>
+            <a href="#contact" tabindex="1">Contact</a>
         </nav>
         <nav id="right-nav">
-            <a href="#projects">Projects</a>
-            <a href="#project-collection-app">Collection App</a>
-            <a href="#project-aptitude-test">Aptitude Test</a>
+            <a href="#projects" tabindex="1">Projects</a>
+            <a href="#project-collection-app" tabindex="1">Collection App</a>
+            <a href="#project-aptitude-test" tabindex="1">Aptitude Test</a>
         </nav>
         <main>
             <section id="about" class="scroll-anchor">
-                <h1 class="hidden">Matt W-R</h1>
-                <p class="hidden">I am an aspiring software developer, currently studying in a practical, focussed course at iO Academy under the guidance of experienced developers. While I am presently learning industry-standard working practices, I have been programming for 3 years, after having taught myself C# & studied scientific computing during my Cambridge University degree. I am hard-working, organised, self-motivated & a keen problem-solver & I believe these traits coupled with my resourceful background in science would make me a worthwhile asset to any development team.</p>
+                <h1 class="hidden" tabindex="2">Matt W-R</h1>
+                <p class="hidden" tabindex="2">I am an aspiring software developer, currently studying in a practical, focussed course at iO Academy under the guidance of experienced developers. While I am presently learning industry-standard working practices, I have been programming for 3 years, after having taught myself C# & studied scientific computing during my Cambridge University degree. I am hard-working, organised, self-motivated & a keen problem-solver & I believe these traits coupled with my resourceful background in science would make me a worthwhile asset to any development team.</p>
             </section>
             <section id="projects" class="scroll-anchor">
-                <h1 class="hidden">Projects</h1>
+                <h1 class="hidden" tabindex="3">Projects</h1>
                 <article id="project-collection-app" class="scroll-anchor">
-                    <h1 class="hidden">Collection App</h1>
-                    <p class="hidden">Created a PHP application to store user inputted item information in a database with my own chosen data structure & displayed the stored items using HTML & CSS. The PHP functions were unit tested using PHPUnit & fully documented. Implemented accessible HTML to offer functionality to as many people as possible. Code reviewed peers doing similar projects along the way. Created the database using MySQL & used Docker to run my local development server.</p>
-                    <a href="https://github.com/MattW-R/Board-Game-Collection" class="hidden">GitHub</a>
-                    <a href="https://2021-matthewwr.dev.io-academy.uk/CollectionApp/" class="hidden">Live</a>
+                    <h1 class="hidden" tabindex="3">Collection App</h1>
+                    <p class="hidden" tabindex="3">Created a PHP application to store user inputted item information in a database with my own chosen data structure & displayed the stored items using HTML & CSS. The PHP functions were unit tested using PHPUnit & fully documented. Implemented accessible HTML to offer functionality to as many people as possible. Code reviewed peers doing similar projects along the way. Created the database using MySQL & used Docker to run my local development server.</p>
+                    <a href="https://github.com/MattW-R/Board-Game-Collection" class="hidden" tabindex="3">GitHub</a>
+                    <a href="https://2021-matthewwr.dev.io-academy.uk/CollectionApp/" class="hidden" tabindex="3">Live</a>
                 </article>
                 <article id="project-aptitude-test" class="scroll-anchor">
-                    <h1 class="hidden">Aptitude Test</h1>
-                    <p class="hidden">Worked in one of two parallel agile scrum teams on a legacy TypeScript & SCSS application. Worked to identify & fix bugs in an existing codebase as well as creating new features in a fashion that complements the existing functionality. Used Postman to assist in the workflow when interacting with a private API.</p>
-                    <a href="https://github.com/iO-Academy/aptitude-test" class="hidden">GitHub</a>
-                    <a href="https://aptitude-test.dev.io-academy.uk/" class="hidden">Live</a>
+                    <h1 class="hidden" tabindex="3">Aptitude Test</h1>
+                    <p class="hidden" tabindex="3">Worked in one of two parallel agile scrum teams on a legacy TypeScript & SCSS application. Worked to identify & fix bugs in an existing codebase as well as creating new features in a fashion that complements the existing functionality. Used Postman to assist in the workflow when interacting with a private API.</p>
+                    <a href="https://github.com/iO-Academy/aptitude-test" class="hidden" tabindex="3">GitHub</a>
+                    <a href="https://aptitude-test.dev.io-academy.uk/" class="hidden" tabindex="3">Live</a>
                 </article>
             </section>
             <section id="contact" class="scroll-anchor">
-                <h1 class="hidden">Contact</h1>
+                <h1 class="hidden" tabindex="4">Contact</h1>
                 <form action="mailto:matthew.wr89@gmail.com" method="post" enctype="text/plain">
                     <div>
                         <label for="email-form-name" class="hidden">Name:</label>
-                        <input type="text" name="name" id="email-form-name" class="hidden" />
+                        <input type="text" name="name" id="email-form-name" class="hidden" tabindex="4" />
                     </div>
                     <div>
                         <label for="email-form-email" class="hidden">E-mail:</label>
-                        <input type="text" name="mail" id="email-form-email" class="hidden" />
+                        <input type="text" name="mail" id="email-form-email" class="hidden" tabindex="4" />
                     </div>
                     <div>
                         <label for="email-form-text" class="hidden">Comment:</label>
-                        <textarea name="comment" id="email-form-text" class="hidden"></textarea>
+                        <textarea name="comment" id="email-form-text" class="hidden" tabindex="4"></textarea>
                     </div>
                     <div>
-                        <input type="submit" value="Send" class="hidden" />
+                        <input type="submit" value="Send" class="hidden" tabindex="4" />
                     </div>
                 </form>
             </section>
