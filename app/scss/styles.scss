@@ -18,7 +18,8 @@ html {
 body {
   margin: 0 auto;
   font-family: $header-font;
-  color: $foreground-colour;
+  color: $primary-colour;
+  background-color: $background-colour;
 }
 
 main {

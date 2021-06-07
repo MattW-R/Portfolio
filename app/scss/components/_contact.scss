@@ -34,8 +34,8 @@
 
       &:focus, &:hover {
         outline: none;
-        border-color: $selected-colour;
-        color: $foreground-colour;
+        border-color: $highlight-colour;
+        color: $primary-colour;
       }
     }
 
