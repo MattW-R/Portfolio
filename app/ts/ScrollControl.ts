@@ -33,17 +33,18 @@ const findNextScrollAnchor = (scrollDirection: 'up'|'down'): HTMLElement|null =>
 
 let oldScrollPosition: number = 0
 
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', (): void => {
     oldScrollPosition = window.scrollY
 })
 
-window.addEventListener('wheel', () => {
+window.addEventListener('wheel', (): void => {
     if (window.scrollY !== oldScrollPosition) {
         const nextScrollAnchor: HTMLElement = (window.scrollY > oldScrollPosition) ?
             findNextScrollAnchor('down') : findNextScrollAnchor('up')
         if (nextScrollAnchor !== null) {
             window.scrollTo(0, nextScrollAnchor.getBoundingClientRect().top
                 - document.querySelector('body').getBoundingClientRect().top)
+            window.location.hash = nextScrollAnchor.id
         }
     }
 })

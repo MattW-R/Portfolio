@@ -14,5 +14,10 @@ nav {
   a {
     margin: 30px 0;
     font-size: 1.5rem;
+    transition: color 500ms linear 300ms;
+
+    &.active {
+      color: $highlight-colour;
+    }
   }
 }
