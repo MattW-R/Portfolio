@@ -1,9 +1,21 @@
+/**
+ * function to find next upward/downward scroll anchor on the page
+ * given the currently scrolled y position of the page,
+ * returns the current scroll anchor element if at the top/bottom of all scroll anchors on the page
+ *
+ * @param {string} scrollDirection string of value 'up' or 'down'
+ * indicating the direction of scrolling/scroll anchor searching
+ *
+ * @returns {HTMLElement|null} a scroll anchor HTML element in the intended scroll direction
+ * or null if there are no scroll anchors on the page
+ */
 const findNextScrollAnchor = (scrollDirection: 'up'|'down'): HTMLElement|null => {
     const scrollAnchors: NodeListOf<HTMLElement> = document.querySelectorAll<HTMLElement>('.scroll-anchor')
     if (scrollAnchors.length > 0) {
         let closestAnchorIndex: number = 0
         for (let i = 0; i < scrollAnchors.length; i++) {
-            if (Math.abs(scrollAnchors[closestAnchorIndex].getBoundingClientRect().top) >= Math.abs(scrollAnchors[i].getBoundingClientRect().top)) {
+            if (Math.abs(scrollAnchors[closestAnchorIndex].getBoundingClientRect().top)
+                >= Math.abs(scrollAnchors[i].getBoundingClientRect().top)) {
                 closestAnchorIndex = i
             }
         }
@@ -19,22 +31,19 @@ const findNextScrollAnchor = (scrollDirection: 'up'|'down'): HTMLElement|null =>
     }
 }
 
-let oldScrollPosition = 0
+let oldScrollPosition: number = 0
 
 window.addEventListener('scroll', () => {
     oldScrollPosition = window.scrollY
 })
 
 window.addEventListener('wheel', () => {
-    if (window.scrollY > oldScrollPosition) {
-        const nextScrollAnchor = findNextScrollAnchor('down')
+    if (window.scrollY !== oldScrollPosition) {
+        const nextScrollAnchor: HTMLElement = (window.scrollY > oldScrollPosition) ?
+            findNextScrollAnchor('down') : findNextScrollAnchor('up')
         if (nextScrollAnchor !== null) {
-            window.scrollTo(0, - document.querySelector('body').getBoundingClientRect().top + nextScrollAnchor.getBoundingClientRect().top)
-        }
-    } else if (window.scrollY < oldScrollPosition) {
-        const nextScrollAnchor = findNextScrollAnchor('up')
-        if (nextScrollAnchor !== null) {
-            window.scrollTo(0, - document.querySelector('body').getBoundingClientRect().top + nextScrollAnchor.getBoundingClientRect().top)
+            window.scrollTo(0, nextScrollAnchor.getBoundingClientRect().top
+                - document.querySelector('body').getBoundingClientRect().top)
         }
     }
 })
