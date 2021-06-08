@@ -8,6 +8,11 @@
 
 * {
   box-sizing: border-box;
+
+  &::selection {
+    background-color: $secondary-colour;
+    color: $background-colour;
+  }
 }
 
 html {
