@@ -31,15 +31,16 @@ const findNextScrollAnchor = (scrollDirection: 'up'|'down'): HTMLElement|null =>
     }
 }
 
-let oldScrollPosition: number = 0
+let scrolling: boolean = false
 
-window.addEventListener('scroll', (): void => {
-    oldScrollPosition = window.scrollY
-})
+setInterval(() => {
+    scrolling = false
+}, 500)
 
-window.addEventListener('wheel', (): void => {
-    if (window.scrollY !== oldScrollPosition) {
-        const nextScrollAnchor: HTMLElement = (window.scrollY > oldScrollPosition) ?
+document.body.addEventListener('wheel', (e: WheelEvent): void => {
+    if (Math.abs(e.deltaY) > 10 && !scrolling) {
+        scrolling = true
+        const nextScrollAnchor: HTMLElement = (e.deltaY > 0) ?
             findNextScrollAnchor('down') : findNextScrollAnchor('up')
         if (nextScrollAnchor !== null) {
             window.scrollTo(0, nextScrollAnchor.getBoundingClientRect().top

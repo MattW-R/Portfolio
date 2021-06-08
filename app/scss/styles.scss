@@ -25,6 +25,7 @@ body {
   font-family: $header-font;
   color: $primary-colour;
   background-color: $background-colour;
+  overflow: hidden;
 }
 
 main {
