@@ -4,7 +4,7 @@
  */
 const checkAndDisplayActiveSection = (): void => {
     document.querySelectorAll('nav a').forEach((navLink: HTMLAnchorElement) => {
-        const activeSection = window.location.hash
+        const activeSection = window.location.hash || '#about'
         if (navLink.href.indexOf(activeSection) !== -1 && !navLink.classList.contains('active')) {
             navLink.classList.add('active')
         } else if (navLink.href.indexOf(activeSection) === -1 && navLink.classList.contains('active')) {
