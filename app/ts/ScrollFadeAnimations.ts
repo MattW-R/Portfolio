@@ -7,9 +7,7 @@
 const checkElementsInView = (elements: NodeListOf<HTMLElement>,
                              callback: (element: HTMLElement, inView: boolean) => void): void => {
     elements.forEach(element => {
-        let domRect: DOMRect = element.getBoundingClientRect()
-        let inView: boolean = (domRect.top <= 4 * window.innerHeight / 5
-            && domRect.bottom >= window.innerHeight / 5)
+        let inView: boolean = ('#' + element.closest('.scroll-anchor').id === window.location.hash)
         callback(element, inView)
     })
 }

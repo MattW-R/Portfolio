@@ -1,7 +1,7 @@
 .hidden {
   color: $hidden-colour;
   border-color: $hidden-colour;
-  transition: color 1000ms linear, border-color 1000ms linear;
+  transition: color 200ms ease-in, border-color 200ms ease-in;
 
   &.visible {
     color: $primary-colour;
