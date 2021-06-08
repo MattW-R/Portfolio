@@ -1,0 +1,23 @@
+#scroll-chevrons {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+
+  i {
+    pointer-events: auto;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: color 200ms linear;
+
+    &.hidden-scroll-chevron {
+      color: $hidden-colour;
+      cursor: auto;
+    }
+  }
+}

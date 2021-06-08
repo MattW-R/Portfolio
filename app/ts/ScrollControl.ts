@@ -28,6 +28,21 @@ const findNextScrollAnchor = (scrollDirection: 'up'|'down'): HTMLElement|null =>
     return null
 }
 
+/**
+ * function to scroll the page to a specific scroll anchor
+ *
+ * @param {HTMLElement|null} scrollAnchor the scroll anchor to scroll to
+ */
+const scrollToAnchor = (scrollAnchor: HTMLElement|null): void => {
+    if (scrollAnchor !== null) {
+        if (scrollAnchor.classList.contains('scroll-anchor')) {
+            scrolling = true
+            window.location.hash = scrollAnchor.id
+            window.location.href = window.location.href
+        }
+    }
+}
+
 let scrolling: boolean = false
 
 setInterval(() => {
@@ -36,12 +51,17 @@ setInterval(() => {
 
 document.body.addEventListener('wheel', (e: WheelEvent): void => {
     if (Math.abs(e.deltaY) > 10 && !scrolling) {
-        scrolling = true
         const nextScrollAnchor: HTMLElement = (e.deltaY > 0) ?
             findNextScrollAnchor('down') : findNextScrollAnchor('up')
-        if (nextScrollAnchor !== null) {
-            window.location.hash = nextScrollAnchor.id
-            window.location.href = window.location.href
-        }
+        scrollToAnchor(nextScrollAnchor)
     }
+})
+
+document.querySelector('#scroll-chevron-up').addEventListener('click', () => {
+    const nextScrollAnchor: HTMLElement = findNextScrollAnchor('up')
+    scrollToAnchor(nextScrollAnchor)
+})
+document.querySelector('#scroll-chevron-down').addEventListener('click', () => {
+    const nextScrollAnchor: HTMLElement = findNextScrollAnchor('down')
+    scrollToAnchor(nextScrollAnchor)
 })
