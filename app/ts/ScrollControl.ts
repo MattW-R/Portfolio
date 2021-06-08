@@ -65,3 +65,11 @@ document.querySelector('#scroll-chevron-down').addEventListener('click', () => {
     const nextScrollAnchor: HTMLElement = findNextScrollAnchor('down')
     scrollToAnchor(nextScrollAnchor)
 })
+
+document.querySelectorAll('[tabindex]').forEach(element => {
+    element.addEventListener('focus', (e: FocusEvent) => {
+        let target: HTMLElement = e.target as HTMLElement
+        window.location.hash = target.closest('.scroll-anchor').id
+        target.focus()
+    })
+})
