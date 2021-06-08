@@ -23,12 +23,9 @@ const findNextScrollAnchor = (scrollDirection: 'up'|'down'): HTMLElement|null =>
             return scrollAnchors[closestAnchorIndex - 1]
         } else if (scrollDirection === 'down' && closestAnchorIndex < scrollAnchors.length - 1) {
             return scrollAnchors[closestAnchorIndex + 1]
-        } else {
-            return scrollAnchors[closestAnchorIndex]
         }
-    } else {
-        return null
     }
+    return null
 }
 
 let scrolling: boolean = false
@@ -43,9 +40,8 @@ document.body.addEventListener('wheel', (e: WheelEvent): void => {
         const nextScrollAnchor: HTMLElement = (e.deltaY > 0) ?
             findNextScrollAnchor('down') : findNextScrollAnchor('up')
         if (nextScrollAnchor !== null) {
-            window.scrollTo(0, nextScrollAnchor.getBoundingClientRect().top
-                - document.querySelector('body').getBoundingClientRect().top)
             window.location.hash = nextScrollAnchor.id
+            window.location.href = window.location.href
         }
     }
 })
