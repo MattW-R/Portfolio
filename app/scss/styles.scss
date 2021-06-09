@@ -32,6 +32,10 @@ html {
   @include tiny-mobile {
     font-size: 10px;
   }
+
+  @include extra-short {
+    font-size: 11px;
+  }
 }
 
 body {
