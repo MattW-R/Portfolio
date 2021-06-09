@@ -1,5 +1,17 @@
 section, article {
   padding: 300px 0 500px;
+
+  @include medium-short {
+    padding: 200px 0 400px;
+  }
+
+  @include short {
+    padding: 150px 0 350px;
+  }
+
+  @include extra-short {
+    padding: 100px 0 300px;
+  }
 }
 
 section {

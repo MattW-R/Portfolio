@@ -3,3 +3,21 @@
     @content;
   }
 }
+
+@mixin medium-short {
+  @media screen and (max-height: 720px) {
+    @content;
+  }
+}
+
+@mixin short {
+  @media screen and (max-height: 580px) {
+    @content;
+  }
+}
+
+@mixin extra-short {
+  @media screen and (max-height: 525px) {
+    @content;
+  }
+}
