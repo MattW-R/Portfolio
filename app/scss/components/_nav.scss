@@ -15,9 +15,24 @@ nav {
     margin: 30px 0;
     font-size: 1.5rem;
     transition: color 500ms linear 300ms;
+    text-align: center;
 
     &.active {
       color: $highlight-colour;
+    }
+  }
+
+  @include mobile {
+    height: 10%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 20%;
+    background-color: $background-colour;
+    z-index: 1;
+
+    &#right-nav {
+      display: none;
     }
   }
 }

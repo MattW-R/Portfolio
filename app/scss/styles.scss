@@ -20,6 +20,18 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+
+  @include mobile {
+    font-size: 14px;
+  }
+
+  @include small-mobile {
+    font-size: 12px;
+  }
+
+  @include tiny-mobile {
+    font-size: 10px;
+  }
 }
 
 body {
@@ -38,6 +50,11 @@ main {
 
   a, a:link, a:visited {
     color: $hidden-colour;
+  }
+
+  @include mobile {
+    width: 100%;
+    left: 0;
   }
 }
 

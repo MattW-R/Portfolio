@@ -1,16 +1,20 @@
 section, article {
-  padding: 300px 0 500px;
+  padding: 250px 0 450px;
 
-  @include medium-short {
+  @include medium {
     padding: 200px 0 400px;
   }
 
-  @include short {
+  @include medium-short {
     padding: 150px 0 350px;
   }
 
-  @include extra-short {
+  @include short {
     padding: 100px 0 300px;
+  }
+
+  @include extra-short {
+    padding: 50px 0 250px;
   }
 }
 
@@ -23,13 +27,15 @@ section {
     text-align: center;
   }
 
-  &#projects > a {
+  &#project > a {
     margin-bottom: 500px;
     font-size: 1.6rem;
   }
 }
 
 article {
+  width: 100%;
+
   &:nth-last-child(1) {
     padding-bottom: 0;
   }
@@ -38,9 +44,17 @@ article {
     display: flex;
     justify-content: space-between;
 
+    @include mobile {
+      flex-direction: column-reverse;
+    }
+
     & > div {
       display: flex;
       align-items: center;
+
+      @include mobile {
+        margin-bottom: 14px;
+      }
     }
   }
 

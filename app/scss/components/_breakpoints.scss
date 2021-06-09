@@ -1,5 +1,23 @@
+@mixin tiny-mobile {
+  @media screen and (max-width: 290px) {
+    @content;
+  }
+}
+
+@mixin small-mobile {
+  @media screen and (max-width: 370px) {
+    @content;
+  }
+}
+
 @mixin mobile {
   @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media screen and (max-height: 840px) {
     @content;
   }
 }
