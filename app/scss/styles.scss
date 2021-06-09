@@ -52,7 +52,7 @@ main {
     color: $hidden-colour;
   }
 
-  @include mobile {
+  @include large-tablet {
     width: 100%;
     left: 0;
   }
