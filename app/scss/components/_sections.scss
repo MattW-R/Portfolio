@@ -1,0 +1,69 @@
+section, article {
+  padding: 250px 0 450px;
+
+  @include medium {
+    padding: 200px 0 400px;
+  }
+
+  @include medium-short {
+    padding: 150px 0 350px;
+  }
+
+  @include short {
+    padding: 100px 0 300px;
+  }
+
+  @include extra-short {
+    padding: 70px 0 270px;
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    text-align: center;
+  }
+
+  &#project > a {
+    margin-bottom: 500px;
+    font-size: 1.6rem;
+  }
+}
+
+article {
+  width: 100%;
+
+  &:nth-last-child(1) {
+    padding-bottom: 0;
+  }
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column-reverse;
+    }
+
+    & > div {
+      display: flex;
+      align-items: center;
+
+      @include mobile {
+        margin-bottom: 14px;
+      }
+    }
+  }
+
+  i {
+    font-size: 2rem;
+    margin-right: 8px;
+  }
+
+  a {
+    margin-right: 30px;
+  }
+}

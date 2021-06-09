@@ -1,28 +1,49 @@
+@import '../../node_modules/normalize.css/normalize';
+@import 'components/variables';
+@import 'components/breakpoints';
+@import 'components/nav';
+@import 'components/sections';
+@import 'components/contact';
+@import 'components/border-lines-effect';
+@import 'components/hidden-effect';
+@import 'components/scroll-chevrons';
+
 * {
   box-sizing: border-box;
+
+  &::selection {
+    background-color: $secondary-colour;
+    color: $background-colour;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+
+  @include mobile {
+    font-size: 14px;
+  }
+
+  @include small-mobile {
+    font-size: 12px;
+  }
+
+  @include tiny-mobile {
+    font-size: 10px;
+  }
+
+  @include extra-short {
+    font-size: 11px;
+  }
 }
 
 body {
   margin: 0 auto;
-}
-
-nav {
-  position: fixed;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 15%;
-
-  &#right-nav {
-    left: 85%;
-    justify-content: center;
-  }
-
-  a {
-    margin: 30px 0;
-  }
+  font-family: $header-font;
+  color: $primary-colour;
+  background-color: $background-colour;
+  overflow: hidden;
 }
 
 main {
@@ -30,33 +51,30 @@ main {
   width: 70%;
   left: 15%;
   padding: 0 10%;
-}
 
-section {
-  padding: 300px 0 500px;
-
-  &#contact {
-    padding-bottom: 250px;
+  a, a:link, a:visited {
+    color: $hidden-colour;
   }
 
-  h1 {
-    text-align: center;
+  @include large-tablet {
+    width: 100%;
+    left: 0;
   }
 }
 
-article {
-  margin: 200px 0 800px;
+h1 {
+  font-size: 2rem;
+}
 
-  &:nth-last-child(1) {
-    margin-bottom: 0;
+a {
+  text-decoration: none;
+
+  &:link, &:visited {
+    color: inherit;
   }
 }
 
-#contact {
-  form {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    padding: 0 15%;
-  }
+p {
+  font-family: $body-font;
+  line-height: 1.25rem;
 }

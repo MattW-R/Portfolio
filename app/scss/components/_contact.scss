@@ -1,0 +1,50 @@
+#contact {
+  form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 0 15%;
+    width: 100%;
+
+    @include mobile {
+      padding: 0;
+    }
+
+    div {
+      margin: 5px 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    label, input, textarea {
+      font-size: 1rem;
+      padding: 1px;
+      font-family: $body-font;
+    }
+
+    label {
+      text-align: right;
+    }
+
+    input, textarea {
+      border: none;
+      border-bottom: 1px solid;
+      background-color: $hidden-colour;
+      width: 80%;
+
+      &[type='submit'] {
+        width: auto;
+      }
+
+      &:focus, &:hover {
+        outline: none;
+        border-color: $highlight-colour;
+        color: $primary-colour;
+      }
+    }
+
+    textarea {
+      resize: none;
+    }
+  }
+}

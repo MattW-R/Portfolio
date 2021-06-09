@@ -1,6 +1,4 @@
 .DS_Store
 .idea/
 node_modules/
-*.js
-*.css
-package-lock.json
+dist/**/*.*
