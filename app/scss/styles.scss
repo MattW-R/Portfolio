@@ -12,7 +12,7 @@
   box-sizing: border-box;
 
   &::selection {
-    background-color: $secondary-colour;
+    background-color: $primary-colour;
     color: $background-colour;
   }
 }
