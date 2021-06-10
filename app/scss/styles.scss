@@ -7,14 +7,10 @@
 @import 'components/border-lines-effect';
 @import 'components/hidden-effect';
 @import 'components/scroll-chevrons';
+@import 'components/selections';
 
 * {
   box-sizing: border-box;
-
-  &::selection {
-    background-color: $primary-colour;
-    color: $background-colour;
-  }
 }
 
 html {
