@@ -51,6 +51,7 @@ article {
     & > div {
       display: flex;
       align-items: center;
+      gap: 8px;
 
       @include mobile {
         margin-bottom: 14px;
@@ -60,10 +61,5 @@ article {
 
   i {
     font-size: 2rem;
-    margin-right: 8px;
-  }
-
-  a {
-    margin-right: 30px;
   }
 }
