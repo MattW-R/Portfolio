@@ -13,7 +13,14 @@
     div {
       margin: 5px 0;
       display: flex;
-      justify-content: flex-end;
+      //justify-content: flex-end;
+      justify-content: center;
+    }
+
+    // TODO Remove above & below code when contact form complete
+
+    span {
+      color: $highlight-colour;
     }
 
     label, input, textarea {

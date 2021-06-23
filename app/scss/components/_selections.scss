@@ -1,0 +1,16 @@
+h1, p, a, input, textarea, label, span {
+  &::selection {
+    background-color: $primary-colour;
+    color: $background-colour;
+  }
+}
+
+nav a.active, #contact span {
+  &::selection {
+    background-color: $highlight-colour;
+  }
+}
+
+article a::selection {
+  background-color: $secondary-colour;
+}

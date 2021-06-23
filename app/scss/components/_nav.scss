@@ -9,6 +9,12 @@ nav {
 
   &#right-nav {
     left: 85%;
+    overflow: scroll;
+
+    a {
+      margin: 15px 0;
+      font-size: 1.3rem;
+    }
   }
 
   a {

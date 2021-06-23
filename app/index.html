@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poiret+One&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/devicon.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.12.0/devicon.min.css">
         <script src="https://kit.fontawesome.com/35772ae2a0.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/styles.css" type="text/css" />
         <script src="js/index.js" defer></script>
@@ -14,57 +14,151 @@
     <body>
         <nav id="left-nav">
             <a href="#about" tabindex="1" class="">About</a>
-            <a href="#project" tabindex="1">Projects</a>
+            <a href="#projects" tabindex="1">Projects</a>
             <a href="#contact" tabindex="1">Contact</a>
         </nav>
         <nav id="right-nav">
-            <a href="#project-collection-app" tabindex="1">Collection App</a>
-            <a href="#project-aptitude-test" tabindex="1">Aptitude Test</a>
+            <a href="#projects-this-portfolio" tabindex="1">This.Portfolio</a>
+            <a href="#projects-parking-app" tabindex="1">Parking.App</a>
+            <a href="#projects-mvc-portal" tabindex="1">MVC.Portal</a>
+            <a href="#projects-dog-app" tabindex="1">Dog.App</a>
+            <a href="#projects-aptitude-test" tabindex="1">Aptitude.Test</a>
+            <a href="#projects-collection-app" tabindex="1">Collection.App</a>
+            <a href="#projects-javascript-game" tabindex="1">JavaScript.Game</a>
         </nav>
+
         <div id="scroll-chevrons">
             <i id="scroll-chevron-up" class="fas fa-chevron-up"></i>
             <i id="scroll-chevron-down" class="fas fa-chevron-down"></i>
         </div>
+
         <main>
             <section id="about" class="scroll-anchor">
                 <h1 class="hidden" tabindex="2">Matt W-R</h1>
-                <p class="hidden" tabindex="2">I am an aspiring software developer, currently studying in a practical, focussed course at iO Academy under the guidance of experienced developers. While I am presently learning industry-standard working practices, I have been programming for 3 years, after having taught myself C# & studied scientific computing during my Cambridge University degree. I am hard-working, organised, self-motivated & a keen problem-solver & I believe these traits coupled with my resourceful background in science would make me a worthwhile asset to any development team.</p>
+                <p class="hidden" tabindex="2">
+                    I am an aspiring software developer having just finished a practical, focussed & industry-standard course at iO Academy under the guidance of experienced developers. Prior to said course I have been programming for 3 years, having taught myself C# & having studied scientific computing during my Cambridge University Natural Sciences degree. I am hard-working, organised, self-motivated & enjoy problem-solving in both working hours & during leisure time (where I play a lot of designer board games & strategy video games). I believe these traits coupled with my resourceful background in science would make me a worthwhile asset to any development team.
+                </p>
             </section>
-            <section id="project" class="scroll-anchor">
+
+            <section id="projects" class="scroll-anchor">
                 <h1 class="hidden" tabindex="3">Projects</h1>
-                <a href="#project-collection-app" class="hidden" tabindex="-1"><i class="fas fa-chevron-down"></i></a>
-                <article id="project-collection-app" class="scroll-anchor">
-                    <h1 class="hidden" tabindex="3">Collection App</h1>
-                    <p class="hidden" tabindex="3">Created a PHP application to store user inputted item information in a database with my own chosen data structure & displayed the stored items using HTML & CSS. The PHP functions were unit tested using PHPUnit & fully documented. Implemented accessible HTML to offer functionality to as many people as possible. Code reviewed peers doing similar projects along the way. Created the database using MySQL & used Docker to run my local development server.</p>
+                <a href="#projects-this-portfolio" class="hidden" tabindex="-1"><i class="fas fa-chevron-down"></i></a>
+
+                <article id="projects-this-portfolio" class="scroll-anchor">
+                    <h1 class="hidden" tabindex="3">This.Portfolio</h1>
+                    <p class="hidden" tabindex="3">Created this portfolio website to display projects I have worked on by myself/as part of a team. Used SCSS to style the HTML5 structure & TypeScript to add specific functionality including a 'scroll anchor' system & dynamic cosmetic effects. Wrote a gulp 'watch' script to automatically compile the TypeScript & SCSS in the background during development. Implemented JavaScript/CSS/HTML minification, ES5 transpilation & other processes within a gulp 'build' script.</p>
                     <div>
                         <div>
-                            <a href="https://github.com/MattW-R/Board-Game-Collection" class="hidden" tabindex="3">GitHub</a>
-                            <a href="https://2021-matthewwr.dev.io-academy.uk/CollectionApp/" class="hidden" tabindex="3">Live</a>
+                            <a href="https://github.com/MattW-R/Portfolio" class="hidden" tabindex="3">GitHub</a>
                         </div>
                         <div>
-                            <i class="devicon-php-plain hidden"></i>
-                            <i class="devicon-mysql-plain hidden"></i>
-                            <i class="devicon-html5-plain hidden"></i>
-                            <i class="devicon-css3-plain hidden"></i>
-                            <i class="devicon-docker-plain hidden"></i>
+                            <a href="https://github.com/MattW-R/Portfolio/tree/main/app/ts" class="hidden" tabindex="3"><i class="devicon-typescript-plain"></i></a>
+                            <a href="https://github.com/MattW-R/Portfolio/tree/main/app/scss" class="hidden" tabindex="3"><i class="devicon-sass-original"></i></a>
+                            <a href="https://github.com/MattW-R/Portfolio/blob/main/app/index.html" class="hidden" tabindex="3"><i class="devicon-html5-plain"></i></a>
+                            <a href="https://github.com/MattW-R/Portfolio/blob/main/gulpfile.js" class="hidden" tabindex="3"><i class="devicon-gulp-plain"></i></a>
+                            <i class="devicon-npm-original-wordmark hidden"></i>
                             <i class="devicon-phpstorm-plain hidden"></i>
                             <i class="devicon-git-plain hidden"></i>
                         </div>
                     </div>
                 </article>
-                <article id="project-aptitude-test" class="scroll-anchor">
-                    <h1 class="hidden" tabindex="3">Aptitude Test</h1>
-                    <p class="hidden" tabindex="3">Worked in one of two parallel agile scrum teams on a legacy TypeScript & SCSS application. Worked to identify & fix bugs in an existing codebase as well as creating new features in a fashion that complements the existing functionality. Used Postman to assist in the workflow when interacting with a private API.</p>
+
+                <article id="projects-parking-app" class="scroll-anchor">
+                    <h1 class="hidden" tabindex="3">Parking.App</h1>
+                    <p class="hidden" tabindex="3">Helped design & build the foundations of a parking app as part of an agile team of four developers, using Slack, Jira & Zoom to collaborate.
+                        Employed Node.js & Express to create a documented, RESTful back end, following the controller-service design pattern.
+                        Proposed a data structure & implemented it using MongoDB.
+                        Built functions to validate & sanitise user inputs, unit tested this built functionality using Jest.
+                        Used React to create a component-based front end architecture that consumed the back-end API.
+                        Implemented the proposed design accurately using InVision.</p>
+                    <div>
+                        <div>
+                            <a href="https://github.com/MattW-R/2021-march-parkingApp" class="hidden" tabindex="3">GitHub</a>
+<!--                            <a href="" class="hidden" tabindex="3">Live</a>-->
+                        </div>
+                        <div>
+                            <a href="https://github.com/MattW-R/2021-march-parkingApp/blob/main/client/src/Component/BookCarPark/BookCarPark.js" class="hidden" tabindex="3"><i class="devicon-react-original"></i></a>
+                            <a href="https://github.com/MattW-R/2021-march-parkingApp/blob/main/api/index.js" class="hidden" tabindex="3"><i class="devicon-nodejs-plain"></i></a>
+                            <a href="https://github.com/MattW-R/2021-march-parkingApp/blob/main/api/Config/Routes.js" class="hidden" tabindex="3"><i class="devicon-express-original"></i></a>
+                            <a href="https://github.com/MattW-R/2021-march-parkingApp/blob/main/api/Services/CarParkService.js" class="hidden" tabindex="3"><i class="devicon-mongodb-plain"></i></a>
+                            <a href="https://github.com/MattW-R/2021-march-parkingApp/blob/main/api/__tests__/durationValidator.test.js" class="hidden" tabindex="3"><i class="devicon-jest-plain"></i></a>
+                            <a href="https://github.com/MattW-R/2021-march-parkingApp/blob/main/client/src/Component/BookingSuccess/BookingSuccess.js" class="hidden" tabindex="3"><i class="devicon-javascript-plain"></i></a>
+                            <i class="devicon-html5-plain hidden"></i>
+                            <a href="https://github.com/MattW-R/2021-march-parkingApp/blob/main/client/src/Component/BookCarPark/BookCarPark.css" class="hidden" tabindex="3"><i class="devicon-css3-plain"></i></a>
+                            <i class="fab fa-invision hidden"></i>
+                            <i class="devicon-npm-original-wordmark hidden"></i>
+                            <i class="devicon-phpstorm-plain hidden"></i>
+                            <i class="devicon-git-plain hidden"></i>
+                            <i class="fab fa-jira hidden"></i>
+
+                        </div>
+                    </div>
+                </article>
+
+                <article id="projects-mvc-portal" class="scroll-anchor">
+                    <h1 class="hidden" tabindex="3">MVC.Portal</h1>
+                    <p class="hidden" tabindex="3">Worked in one of two parallel agile development teams on a legacy PHP & JavaScript application.
+                        Worked within an MVC architectural pattern & used the Slim framework.
+                        Created new features in a manner that complemented the existing feature implementation with the assistance of pair-programming & code-reviews.
+                        Utilised a CI server to ensure all unit tests passed & any coding standards were matched before task branches were able to be merged.</p>
+                    <div>
+                        <div>
+                            <a href="https://github.com/iO-Academy/AcademyPortal" class="hidden" tabindex="3">GitHub</a>
+                            <a href="https://portal.dev.io-academy.uk/" class="hidden" tabindex="3">Live</a>
+                        </div>
+                        <div>
+                            <a href="https://github.com/iO-Academy/AcademyPortal/pull/344/files?file-filters%5B%5D=.php" class="hidden" tabindex="3"><i class="devicon-php-plain"></i></a>
+                            <a href="https://github.com/iO-Academy/AcademyPortal/pull/359/files?file-filters%5B%5D=.php#diff-a3e5fce0d9d6587787d53ac926acd537e71566cb8ed8f39834837959d007ebf4" class="hidden" tabindex="3"><i class="devicon-mysql-plain"></i></a>
+                            <a href="https://github.com/iO-Academy/AcademyPortal/pull/359/files?file-filters%5B%5D=.js" class="hidden" tabindex="3"><i class="devicon-javascript-plain"></i></a>
+                            <a href="https://github.com/iO-Academy/AcademyPortal/pull/344/files?file-filters%5B%5D=.phtml#diff-71b3aa5b92fc0a3762e8596845754d6d6a75c9c001a7613bcd279d5afed96700" class="hidden" tabindex="3"><i class="devicon-html5-plain"></i></a>
+                            <i class="devicon-css3-plain hidden"></i>
+                            <a href="https://github.com/iO-Academy/AcademyPortal/pull/344/files?file-filters%5B%5D=.phtml#diff-71b3aa5b92fc0a3762e8596845754d6d6a75c9c001a7613bcd279d5afed96700" class="hidden" tabindex="3"><i class="devicon-bootstrap-plain"></i></a>
+                            <i class="devicon-circleci-plain hidden"></i>
+                            <i class="devicon-phpstorm-plain hidden"></i>
+                            <i class="devicon-git-plain hidden"></i>
+                            <i class="devicon-trello-plain hidden"></i>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="projects-dog-app" class="scroll-anchor">
+                    <h1 class="hidden" tabindex="3">Dog.App</h1>
+                    <p class="hidden" tabindex="3">
+                        Worked in a team of 8 developers, over the course of a single sprint, to create a web application to display information about different dog breeds from a MySQL database & filter them by their associated temperaments.
+                        Created unit-tested & fully documented object-orientated functionality in PHP.
+                        Implemented namespacing, autoloading & the hydrator design pattern.
+                    </p>
+                    <div>
+                        <div>
+                            <a href="https://github.com/iO-Academy/2021-march-fetch" class="hidden" tabindex="3">GitHub</a>
+                            <a href="https://dev.io-academy.uk/projects/2021-march/fetch/" class="hidden" tabindex="3">Live</a>
+                        </div>
+                        <div>
+                            <a href="https://github.com/iO-Academy/2021-march-fetch/pull/21/files" class="hidden" tabindex="3"><i class="devicon-php-plain"></i></a>
+                            <a href="https://github.com/iO-Academy/2021-march-fetch/pull/17/files" class="hidden" tabindex="3"><i class="devicon-mysql-plain"></i></a>
+                            <a href="https://github.com/iO-Academy/2021-march-fetch/pull/11/files?file-filters%5B%5D=.php#diff-7413d6453f901e939bbd840c8f0d1c7b20c2ca0e7f71741e4e07c6cf036f16c0" class="hidden" tabindex="3"><i class="devicon-html5-plain"></i></a>
+                            <a href="https://github.com/iO-Academy/2021-march-fetch/pull/11/files?file-filters%5B%5D=.css#diff-da08da0da5bfd24f80d8d86681fca579c0cbdc9f64bbe06251878d7762815cce" class="hidden" tabindex="3"><i class="devicon-css3-plain"></i></a>
+                            <i class="devicon-phpstorm-plain hidden"></i>
+                            <i class="devicon-git-plain hidden"></i>
+                            <i class="devicon-trello-plain hidden"></i>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="projects-aptitude-test" class="scroll-anchor">
+                    <h1 class="hidden" tabindex="3">Aptitude.Test</h1>
+                    <p class="hidden" tabindex="3">Worked in one of two parallel agile scrum teams on a legacy TypeScript, SCSS & Bootstrap application. Worked to identify & fix bugs in an existing codebase as well as creating new features in a fashion that complements the existing functionality. Utilised Handlebars to create & dynamically populate templates. Used Postman to assist in the workflow when interacting with a private API.</p>
                     <div>
                         <div>
                             <a href="https://github.com/iO-Academy/aptitude-test" class="hidden" tabindex="3">GitHub</a>
                             <a href="https://aptitude-test.dev.io-academy.uk/" class="hidden" tabindex="3">Live</a>
                         </div>
                         <div>
-                            <i class="devicon-typescript-plain hidden"></i>
+                            <a href="https://github.com/iO-Academy/aptitude-test/pull/358/files?file-filters%5B%5D=.ts" class="hidden" tabindex="3"><i class="devicon-typescript-plain"></i></a>
                             <i class="devicon-sass-original hidden"></i>
-                            <i class="devicon-html5-plain hidden"></i>
-                            <i class="devicon-handlebars-plain hidden"></i>
+                            <a href="https://github.com/iO-Academy/aptitude-test/pull/358/files?file-filters%5B%5D=.hbs&file-filters%5B%5D=.html" class="hidden" tabindex="3"><i class="devicon-html5-plain"></i></a>
+                            <a href="https://github.com/iO-Academy/aptitude-test/pull/358/files?file-filters%5B%5D=.hbs" class="hidden" tabindex="3"><i class="devicon-handlebars-plain"></i></a>
+                            <a href="https://github.com/iO-Academy/aptitude-test/pull/358/files?file-filters%5B%5D=.hbs&file-filters%5B%5D=.html" class="hidden" tabindex="3"><i class="devicon-bootstrap-plain"></i></a>
                             <i class="devicon-gulp-plain hidden"></i>
                             <i class="devicon-phpstorm-plain hidden"></i>
                             <i class="devicon-git-plain hidden"></i>
@@ -72,24 +166,67 @@
                         </div>
                     </div>
                 </article>
+
+                <article id="projects-collection-app" class="scroll-anchor">
+                    <h1 class="hidden" tabindex="3">Collection.App</h1>
+                    <p class="hidden" tabindex="3">Created a PHP application to store user inputted item information in a database, with a data structure of my design. Displayed the stored data using HTML & CSS. PHP validation functions were unit tested using PHPUnit & fully documented. Implemented accessible HTML to offer functionality to as many people as possible. Code reviewed peers doing similar projects along the way. Created the database using MySQL & used Docker to run my local development server.</p>
+                    <div>
+                        <div>
+                            <a href="https://github.com/MattW-R/Board-Game-Collection" class="hidden" tabindex="3">GitHub</a>
+                            <a href="https://2021-matthewwr.dev.io-academy.uk/CollectionApp/" class="hidden" tabindex="3">Live</a>
+                        </div>
+                        <div>
+                            <a href="https://github.com/MattW-R/Board-Game-Collection/blob/main/functions.php" class="hidden" tabindex="3"><i class="devicon-php-plain"></i></a>
+                            <a href="https://github.com/MattW-R/Board-Game-Collection/blob/main/functions.php" class="hidden" tabindex="3"><i class="devicon-mysql-plain"></i></a>
+                            <a href="https://github.com/MattW-R/Board-Game-Collection/blob/main/index.php" class="hidden" tabindex="3"><i class="devicon-html5-plain"></i></a>
+                            <a href="https://github.com/MattW-R/Board-Game-Collection/blob/main/styles.css" class="hidden" tabindex="3"><i class="devicon-css3-plain"></i></a>
+                            <i class="devicon-docker-plain hidden"></i>
+                            <i class="devicon-phpstorm-plain hidden"></i>
+                            <i class="devicon-git-plain hidden"></i>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="projects-javascript-game" class="scroll-anchor">
+                    <h1 class="hidden" tabindex="3">Javascript.Game</h1>
+                    <p class="hidden" tabindex="3">Led a team of my peers, as the scrum master, in creating a game using JavaScript, HTML & CSS. Worked collaboratively in an agile scrum team, using Git for version control. Practiced pair programming & detailed code reviews in the process. Guided my team in presenting the work in a sprint review & organised/carried out a sprint retrospective for my team.</p>
+                    <div>
+                        <div>
+                            <a href="https://github.com/iO-Academy/2021-march-JsAnagrams" class="hidden" tabindex="3">GitHub</a>
+                            <a href="https://dev.io-academy.uk/projects/2021-march/scrumble/" class="hidden" tabindex="3">Live</a>
+                        </div>
+                        <div>
+                            <a href="https://github.com/iO-Academy/2021-march-JsAnagrams/pull/18/files?file-filters%5B%5D=.js" class="hidden" tabindex="3"><i class="devicon-javascript-plain"></i></a>
+                            <a href="https://github.com/iO-Academy/2021-march-JsAnagrams/pull/28/files?file-filters%5B%5D=.html" class="hidden" tabindex="3"><i class="devicon-html5-plain"></i></a>
+                            <a href="https://github.com/iO-Academy/2021-march-JsAnagrams/pull/18/files?file-filters%5B%5D=.css" class="hidden" tabindex="3"><i class="devicon-css3-plain"></i></a>
+                            <i class="devicon-phpstorm-plain hidden"></i>
+                            <i class="devicon-git-plain hidden"></i>
+                            <i class="devicon-trello-plain hidden"></i>
+                        </div>
+                    </div>
+                </article>
             </section>
+
             <section id="contact" class="scroll-anchor">
                 <h1 class="hidden" tabindex="4">Contact</h1>
                 <form action="mailto:matthew.wr89@gmail.com" method="post" enctype="text/plain">
+<!--                    <div>-->
+<!--                        <label for="email-form-name" class="hidden">Name:</label>-->
+<!--                        <input type="text" name="name" id="email-form-name" class="hidden" tabindex="4" />-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <label for="email-form-email" class="hidden">E-mail:</label>-->
+<!--                        <input type="text" name="mail" id="email-form-email" class="hidden" tabindex="4" />-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <label for="email-form-text" class="hidden">Comment:</label>-->
+<!--                        <textarea name="comment" id="email-form-text" class="hidden" tabindex="4"></textarea>-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <input type="submit" value="Send" class="hidden" tabindex="4" />-->
+<!--                    </div>-->
                     <div>
-                        <label for="email-form-name" class="hidden">Name:</label>
-                        <input type="text" name="name" id="email-form-name" class="hidden" tabindex="4" />
-                    </div>
-                    <div>
-                        <label for="email-form-email" class="hidden">E-mail:</label>
-                        <input type="text" name="mail" id="email-form-email" class="hidden" tabindex="4" />
-                    </div>
-                    <div>
-                        <label for="email-form-text" class="hidden">Comment:</label>
-                        <textarea name="comment" id="email-form-text" class="hidden" tabindex="4"></textarea>
-                    </div>
-                    <div>
-                        <input type="submit" value="Send" class="hidden" tabindex="4" />
+                        <p tabindex="4">Email: <span>Matthew.wr89@gmail.com</span></p>
                     </div>
                 </form>
             </section>
